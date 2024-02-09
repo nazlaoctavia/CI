@@ -1,0 +1,12 @@
+ <?php
+                    $sql =  "SELECT * FROM admin";
+                    $result = mysql_query($sql);
+                    $no_urut=1;
+                ?>
+
+
+
+
+
+
+

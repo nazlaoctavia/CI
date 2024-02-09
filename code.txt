@@ -1,0 +1,50 @@
+$(document).ready(function () {
+	$('#table').DataTable({
+		dom: 'Bfrtip',
+		buttons:['copy','csv','excel','pdf','print']
+});
+});
+membuat tombol download  print
+
+
+
+// public function proses2(){
+        $username = $this->input->post('username');
+        $password + $this->input->post('password');
+        $where = array(
+            'email'=> $username,
+            'password'=> $password
+        );
+
+        $cek = $this->auth->cek_users($username,$password);
+        $isi = $this->auth->cek_login("tb_user",$where)->row();
+
+        if($cek->num_rows() == 1){
+            foreach($cek->result()as $data){
+                $data_session = array(
+                    'nama' => $username,
+                    'password' => $password,
+                    'level' => $data->level,
+                    'id_user' => $sisi->id_user,
+                    'status' =>"login"
+                    );
+                $this->session->set_userdata($data_session);
+
+                if($this->session->userdata('level') == 1){
+                    //echo 'ini halaman admin';
+                    redirect(site_url('admin');)
+                }elseif ($this->session->userdata('level') == 2){
+                    //echo 'ini halaman user';
+                    redirect(site_url('main'));
+                //}elseif($this->session->userdat('level') == 3){
+                    //echo'ini halaman gudang';
+                //redirect('gudang');
+                }else{
+                    echo 'tidak masuk katogori';
+                }
+            }
+        }echo{
+            echo "user tidak terdaftar";
+        }
+
+Level Dalam Login

@@ -1,0 +1,3 @@
+code warna
+#8b4588 ungu muda
+#753773 ungu tua

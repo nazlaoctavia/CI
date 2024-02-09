@@ -1,0 +1,11 @@
+  public function delete($id)
+                {
+                        $where=array('categoriId'=$id);
+                        $this->mymodel->delete('berita',$where);
+                        redirect(site_url('admin/kompetisi'));
+                }
+public function delete($table,$where)
+	{
+		$res=$this->db->delete($table,$where);
+		return $res;
+	}
